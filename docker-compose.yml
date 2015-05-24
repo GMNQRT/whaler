@@ -1,0 +1,16 @@
+web:
+  build: .
+  ports:
+   - "3000:3000"
+  volumes:
+   - .:/whaler
+  links:
+   - db
+  env_file:
+    - '.env.web'
+db:
+  image: mysql:latest
+  #ports:
+  #  - "13306:3306"
+#  env_file:
+ #   - '.env.db'
