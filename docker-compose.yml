@@ -10,7 +10,7 @@ web:
     - '.env.web'
 db:
   image: mysql:latest
-  #ports:
-  #  - "13306:3306"
+  ports:
+    - "3306:3306"
   env_file:
     - '.env.db'
