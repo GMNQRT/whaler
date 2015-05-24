@@ -1,6 +1,5 @@
-
 # récupérer les sources :
-```git clone ```
+```git clone https://gitlab.loterman.net/Docker/Whaler-api_compose.git ```
 
 # Dockerfile
 TODO
@@ -15,9 +14,10 @@ Modifier la variable DOCKER_URL dans .env.web pour mettre votre url de serveur D
 # Premier démarrage
 
 Se placer dans le répertoire contenent les fichiers.
-Il faut build les conteneurs. 
+Il faut build les conteneurs.
+
 ```docker-compose build```
 
 Ensuite démarré les conteneurs 
-```docker-compse up```
 
+```docker-compse up```
