@@ -12,5 +12,5 @@ db:
   image: mysql:latest
   #ports:
   #  - "13306:3306"
-#  env_file:
- #   - '.env.db'
+  env_file:
+    - '.env.db'
