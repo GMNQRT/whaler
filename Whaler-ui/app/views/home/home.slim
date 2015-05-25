@@ -1,0 +1,62 @@
+p home.slim
+.row
+  .col-xs-4.col-sm-4.col-md-4.col-lg-4
+    p ApiVersion : #{'{{ values.version.ApiVersion }}'}
+    p Arch : #{'{{ values.version.Arch }}'}
+  .col-xs-4.col-sm-4.col-md-4.col-lg-4
+    p GitCommit : #{'{{ values.version.GitCommit }}'}
+    p GoVersion : #{'{{ values.version.GoVersion }}'}
+  .col-xs-4.col-sm-4.col-md-4.col-lg-4
+    p KernelVersion : #{'{{ values.version.KernelVersion }}'}
+    p Os : #{'{{ values.version.Os }}'}
+    p Version : #{'{{ values.version.Version }}'}
+hr
+.row
+  .col-xs-12.col-sm-12.col-md-12.col-lg-12
+    p ID: #{'{{ values.info.ID}}'}
+.row
+  .col-xs-3.col-sm-3.col-md-3.col-lg-3
+    p Containers: #{'{{ values.info.Containers}}'}
+    p Debug: #{'{{ values.info.Debug}}'}
+    p DockerRootDir: #{'{{ values.info.DockerRootDir}}'}
+    p Driver: #{'{{ values.info.Driver}}'}
+    p ExecutionDriver: #{'{{ values.info.ExecutionDriver}}'}
+    p IPv4Forwarding: #{'{{ values.info.IPv4Forwarding}}'}
+  .col-xs-3.col-sm-3.col-md-3.col-lg-3
+    p Images: #{'{{ values.info.Images}}'}
+    p IndexServerAddress: #{'{{ values.info.IndexServerAddress}}'}
+    p InitPath: #{'{{ values.info.InitPath}}'}
+    p InitSha1: #{'{{ values.info.InitSha1}}'}
+    p KernelVersion: #{'{{ values.info.KernelVersion}}'}
+    p Labels: #{'{{ values.info.Labels}}'}
+    p MemTotal: #{'{{ values.info.MemTotal}}'}
+  .col-xs-3.col-sm-3.col-md-3.col-lg-3
+    p MemoryLimit: #{'{{ values.info.MemoryLimit}}'}
+    p NCPU: #{'{{ values.info.NCPU}}'}
+    p NEventsListener: #{'{{ values.info.NEventsListener}}'}
+    p NFd: #{'{{ values.info.NFd}}'}
+    p NGoroutines: #{'{{ values.info.NGoroutines}}'}
+    p Name: #{'{{ values.info.Name}}'}
+    p OperatingSystem: #{'{{ values.info.OperatingSystem}}'}
+  .col-xs-3.col-sm-3.col-md-3.col-lg-3
+    p SwapLimit: #{'{{ values.info.SwapLimit}}'}
+    p RegistryConfig:
+    p IndexConfigs:
+    p Mirrors: #{'{{ values.info.RegistryConfig.IndexConfigs.docker.io.Mirrors}}'}
+    p Name: #{'{{ values.info.RegistryConfig.IndexConfigs.docker.io.Name}}'}
+    p Official: #{'{{ values.info.RegistryConfig.IndexConfigs.docker.io.Official}}'}
+    p Secure: #{'{{ values.info.RegistryConfig.IndexConfigs.docker.io.Secure}}'}
+    p InsecureRegistryCIDRs: #{'{{ values.info.RegistryConfig.InsecureRegistryCIDRs}}'}
+hr
+  table.table.table-bordered
+    tr
+      th colspan="2" DriverStatus
+    tr
+      td Root Dir
+      td #{'{{ values.info.DriverStatus[0]}}'}
+    tr
+      td Backing Filesystem
+      td #{'{{ values.info.DriverStatus[1]}}'}
+    tr
+      td Dirs
+      td #{'{{ values.info.DriverStatus[2]}}'}

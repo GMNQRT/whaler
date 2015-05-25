@@ -1,0 +1,39 @@
+doctype html
+html ng-app="whaler"
+  head
+    base href="/"
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title WhalerUi
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body
+    header
+      .container
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            == image_tag("logo.png", class: "img-responsive logo")
+    #menu
+      .container
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            nav.navbar.navbar-default
+              .container-fluid
+                .navbar-header
+                  button.navbar-toggle.collapsed data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                  = render_navigation
+
+    .container ng-view=""
+
+    footer
+      .container
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12 
+            p  Copyright © Whaler 2014 - 2015

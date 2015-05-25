@@ -19,7 +19,7 @@ ADD ./Whaler-api/ /whaler-api
 WORKDIR /whaler-api
 
 # Run rake tasks
-#RUN RAILS_ENV=production rake db:create db:migrate
+RUN RAILS_ENV=development rake db:create db:migrate
 #RUN RAILS_ENV=production bundle exec rake assets:precompile --trace
 RUN RAILS_ENV=development bundle exec rake assets:precompile --trace
 CMD ["rails","server","-b","0.0.0.0"]
