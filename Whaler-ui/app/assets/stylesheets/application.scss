@@ -9,30 +9,11 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- */
+ *
+*/
+@import "bootstrap/index";
+@import "layout";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-@import "color.scss";
-@import "variable.scss";
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
-
-header
-{
-  height: 100px;
-  background-color: $blue-light-2;
-}
-.logo
-{
-  height: 100px;
-}
-#menu
-{
-  background-color: $yellow-4;
-    height: 52px;
-}
-footer
-{
-  // height: 100px;
-  color:#fff;
-  background-color: $blue-light-2;
-}
+body.imageCtrl { @import "image"; }
+body.sessionsCtrl { @import "sessions"; }

@@ -19,6 +19,7 @@ development:
   port: 3306
   socket: /tmp/mysql.sock
 
+
 test:
   <<: *default
   database: DBNAME
