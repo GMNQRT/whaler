@@ -27,6 +27,7 @@ ui:
   command: bundle exec rails s -p 3001 -b '0.0.0.0'
   volumes:
     - ./whaler-ui:/whaler-ui
+    - .git:/.git
   ports:
     - "3001:3001"
   links:

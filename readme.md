@@ -27,9 +27,12 @@ Then build images of whaler-api and whaler-ui projects
 
     docker-compose build
 
+Download assets
+
+    docker-compose run ui rake bower:install['--allow-root']
+
 Build the database
 
-    docker-compose run db
     docker-compose run api rake db:create
     docker-compose run api rake db:seed
 
