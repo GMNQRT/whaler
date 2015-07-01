@@ -1,4 +1,4 @@
-# récupérer les sources :
+# Get sources
 Clone the main repo:
 
     git clone https://gitlab.loterman.net/Docker/Whaler-api_compose.git
@@ -18,7 +18,7 @@ TODO
 The docker-compose.yml contains directives to configure containers for both ui, api and db.
 api and ui are both linked to the db container.
 
-# Premier démarrage
+# First start
 Go to the docker-compose.yml folder
 
     cd Whaler-api_compose
@@ -33,6 +33,6 @@ Build the database
     docker-compose run api rake db:create
     docker-compose run api rake db:seed
 
-Then start all container
+Then start all containers
 
     docker-compose up
