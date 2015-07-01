@@ -1,16 +1,35 @@
-web:
-  build: .
-  ports:
-   - "8081:8080"
-  volumes:
-   - .:/whaler
-  links:
-   - db
-  env_file:
-    - '.env.web'
 db:
   image: mysql:latest
   ports:
     - "3306:3306"
-  env_file:
-    - '.env.db'
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: whaler
+    MYSQL_USER: whaler
+    MYSQL_PASSWORD: admin
+
+api:
+  build: ./whaler-api
+  command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  volumes:
+    - ./whaler-api:/whaler-api
+    - /var/run/docker.sock:/var/run/docker.sock
+  ports:
+    - "3000:3000"
+  links:
+    - db
+  environment:
+    DOCKER_CERT_PATH: /home/.docker
+    RAILS_ENV: development
+
+ui:
+  build: ./whaler-ui
+  command: bundle exec rails s -p 3001 -b '0.0.0.0'
+  volumes:
+    - ./whaler-ui:/whaler-ui
+  ports:
+    - "3001:3001"
+  links:
+    - db
+  environment:
+    RAILS_ENV: development
