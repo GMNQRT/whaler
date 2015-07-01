@@ -1,8 +1,8 @@
-[submodule "whalerApi"]
+[submodule "whaler-api"]
 	path = whaler-api
 	url = https://gitlab.loterman.net/Quentin/Whaler-api.git
   branch = develop
-[submodule "whalerUi"]
+[submodule "whaler-ui"]
 	path = whaler-ui
 	url = https://gitlab.loterman.net/Quentin/Whaler-ui.git
   branch = develop
