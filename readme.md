@@ -1,23 +1,38 @@
 # récupérer les sources :
-```git clone https://gitlab.loterman.net/Docker/Whaler-api_compose.git ```
+Clone the main repo:
+
+    git clone https://gitlab.loterman.net/Docker/Whaler-api_compose.git
+
+Then pull modules:
+
+    cd Whaler-api_compose
+    git submodule init
+    git submodule update
+
+
 
 # Dockerfile
 TODO
 
 # Docker-compose
-Le fichier de configuration docker-compose.yml contient toutes les directives de configuration pour créer les conteneurs web et db.
-Les conteneurs web et db sont linkés.
-
-Les variables d'environnement se retouvent dans les fichiers .env.web et .env.db pour leur conteneurs respectifs.
-Modifier la variable DOCKER_URL dans .env.web pour mettre votre url de serveur Docker.
+The docker-compose.yml contains directives to configure containers for both ui, api and db.
+api and ui are both linked to the db container.
 
 # Premier démarrage
+Go to the docker-compose.yml folder
 
-Se placer dans le répertoire contenent les fichiers.
-Il faut build les conteneurs.
+    cd Whaler-api_compose
 
-```docker-compose build```
+Then build images of whaler-api and whaler-ui projects
 
-Ensuite démarré les conteneurs 
+    docker-compose build
 
-```docker-compse up```
+Build the database
+
+    docker-compose run db
+    docker-compose run api rake db:create
+    docker-compose run api rake db:seed
+
+Then start all container
+
+    docker-compose up
