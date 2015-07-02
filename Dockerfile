@@ -4,15 +4,15 @@ FROM ruby:2.2.0
 # Install required libraries and dependencies
 RUN apt-get update && apt-get install -qy mysql-client build-essential vim sqlite3 --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
-# Create directory from where the code will run 
-RUN mkdir -p /whaler-api 
+# Create directory from where the code will run
+RUN mkdir -p /whaler-api
 RUN mkdir -p /whaler-ui
 WORKDIR /tmp
 
 COPY Whaler-api/Gemfile Gemfile
 COPY Whaler-api/Gemfile.lock Gemfile.lock
 
-# Install the necessary gems 
+# Install the necessary gems
 RUN bundle install # --without development test
 
 # Add rails project (from same dir as Dockerfile) to project directory
