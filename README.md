@@ -20,3 +20,16 @@ Go to the docker-compose.yml folder and build images of whaler-api and whaler-ui
 Then start all containers
 
     docker-compose up
+    
+Cento OS 6.6
+---------------
+
+    sudo yum update
+
+    yum install docker.io
+
+docker-compose
+
+    curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+
