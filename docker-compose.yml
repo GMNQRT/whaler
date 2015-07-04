@@ -10,7 +10,7 @@ db:
 
 api:
   build: ./whaler-api
-  command: /bin/bash -c "ruby bin/setup && bundle exec rails s -p 3001 -b '0.0.0.0'"
+  command: /bin/bash -c "ruby bin/setup && bundle exec rails s -p 3000 -b '0.0.0.0'"
   volumes:
     - ./whaler-api:/whaler-api
     - /var/run/docker.sock:/var/run/docker.sock
