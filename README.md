@@ -1,7 +1,7 @@
 # Get sources
 Clone the main repo:
 
-    git clone https://gitlab.loterman.net/Docker/Whaler-api_compose.git whaler
+    git clone https://gitlab.loterman.net/Docker/Whaler-compose.git whaler
 
 Then pull modules:
 
