@@ -18,6 +18,7 @@ api:
     - "3000:3000"
   links:
     - db
+    - redis
   environment:
     DOCKER_CERT_PATH: /home/.docker
     RAILS_ENV: development
@@ -34,3 +35,17 @@ ui:
     - db
   environment:
     RAILS_ENV: development
+
+monitor:
+  build: ./whaler-api
+  volumes:
+    - ./whaler-api:/whaler-api
+    - /var/run/docker.sock:/var/run/docker.sock
+  links:
+    - redis
+  command: rake monit:event:start DEBUG=y
+
+redis:
+  image: redis:latest
+  ports:
+    - "6379:6379"
