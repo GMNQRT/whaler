@@ -61,8 +61,6 @@ logspout:
     - /var/run/docker.sock:/tmp/docker.sock
   links:
     - logs
-  ports:
-    - "8000:8000"
   command: syslog://logs:3002
 
 redis:
