@@ -45,6 +45,26 @@ monitor:
     - redis
   command: rake monit:event:start DEBUG=y
 
+# Syslog UDP server to trigger containers logs to ui with WebSocket
+logs:
+  build: ./whaler-logs
+  links:
+    - redis
+  volumes:
+    - ./whaler-logs:/usr/src/app
+  ports:
+    - "3002:3002/udp"
+
+logspout:
+  image: gliderlabs/logspout
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock
+  links:
+    - logs
+  ports:
+    - "8000:8000"
+  command: syslog://logs:3002
+
 redis:
   image: redis:latest
   ports:
