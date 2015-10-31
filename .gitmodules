@@ -4,3 +4,6 @@
 [submodule "whaler-ui"]
 	path = whaler-ui
 	url = https://gitlab.loterman.net/Quentin/Whaler-ui.git
+[submodule "whaler-logs"]
+	path = whaler-logs
+	url = https://gitlab.loterman.net/Docker/whaler-logs.git
