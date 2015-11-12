@@ -1,9 +1,9 @@
 [submodule "whaler-api"]
 	path = whaler-api
-	url = https://gitlab.loterman.net/Quentin/Whaler-api.git
+	url = https://github.com/GMNQRT/whaler-api.git
 [submodule "whaler-ui"]
 	path = whaler-ui
-	url = https://gitlab.loterman.net/Quentin/Whaler-ui.git
+	url = https://github.com/GMNQRT/whaler-ui.git
 [submodule "whaler-logs"]
 	path = whaler-logs
-	url = https://gitlab.loterman.net/Docker/whaler-logs.git
+	url = https://github.com/GMNQRT/whaler-logs.git
