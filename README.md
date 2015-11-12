@@ -1,34 +1,80 @@
-# Get sources
-Clone the main repo:
+![logo](brand.png)
 
-    git clone https://gitlab.loterman.net/Docker/Whaler-compose.git whaler
+# Whaler
+This project exposes a friendly user interface to Docker
 
-Then pull modules:
+## Getting Started
 
-    cd whaler
-    git submodule update --init
+## Work with Docker !
 
-# Docker-compose
-The docker-compose.yml contains directives to configure containers for both ui, api and db.
-api and ui are both linked to the db container.
+### Pre-requisites
+* Computer
+* docker
+* docker-compose
 
-# First start
-Go to the docker-compose.yml folder and build images of whaler-api and whaler-ui projects
+### Install steps
 
-    docker-compose build
+The docker-compose.yml contains directives to configure all containers.
+```
+git clone https://github.com/GMNQRT/whaler.git
+cd whaler
+git submodule update --init
 
-Then start all containers
+docker-compose up
+```
+That's all folks !
+Now visit localhost:3000 and see if it works
 
-    docker-compose up
-    
-CentOS 6.6
----------------
+## Without Docker
 
-    sudo yum update
+### Pre-requisites
+* Computer
+* Ruby 2.2.0
+* MySQL server
+* Redis server
+* Logspout server
 
-    yum install docker.io
+### Install steps
+```
+git clone https://github.com/GMNQRT/whaler.git
+cd whaler
+git submodule update --init
+```
 
-docker-compose
+### Configure Whaler
+You must update configuration files according to your MySQL and Redis configurations.
 
-    curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-    chmod +x /usr/local/bin/docker-compose
+### Launch Whaler API <small>([see project](https://github.com/GMNQRT/whaler-api.git))</small>
+Update MySQL configuration in `whaler-api/config/database.yml`  
+Update MySQL configuration in `whaler-api/config/database.yml`  
+Update Redis configuration in `whaler-api/config/initializers/websocket_rails.yml`
+
+```
+cd whaler-api
+ruby bin/setup && bundle exec rails s -p 3000 -b '0.0.0.0'
+```
+
+### Launch Whaler event monitor
+```
+cd whaler-api
+rake monit:event:start
+```
+
+### Launch Whaler UI <small>([see project](https://github.com/GMNQRT/whaler-ui.git))</small>
+Update MySQL configuration in `whaler-ui/config/database.yml`
+
+```
+cd whaler-ui
+ruby bin/setup && bundle exec rails s -p 3001 -b '0.0.0.0'
+```
+
+### Launch Whaler Logs <small>([see project](https://github.com/GMNQRT/whaler-logs.git))</small>
+Update Logspout and Redis configurations in `whaler-logs/server.rb`
+
+```
+cd whaler-logs
+bundle
+ruby server.rb
+```
+
+Now visit localhost:3000 and see if it works
