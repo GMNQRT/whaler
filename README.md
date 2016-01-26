@@ -65,7 +65,7 @@ Update MySQL configuration in `whaler-ui/config/database.yml`
 
 ```
 cd whaler-ui
-ruby bin/setup && bundle exec rails s -p 3001 -b '0.0.0.0'
+ruby bin/setup && bundle exec rails s -p 80 -b '0.0.0.0'
 ```
 
 ### Launch Whaler Logs <small>([see project](https://github.com/GMNQRT/whaler-logs.git))</small>
