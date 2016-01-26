@@ -25,12 +25,12 @@ api:
 
 ui:
   build: ./whaler-ui
-  command: /bin/bash -c "ruby bin/setup && bundle exec rails s -p 3001 -b '0.0.0.0'"
+  command: /bin/bash -c "ruby bin/setup && bundle exec rails s -p 80 -b '0.0.0.0'"
   volumes:
     - ./whaler-ui:/whaler-ui
     - .git:/.git
   ports:
-    - "3001:3001"
+    - "80:80"
   links:
     - db
   environment:
