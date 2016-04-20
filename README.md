@@ -23,7 +23,8 @@ git submodule update --init
 docker-compose up
 ```
 That's all folks !
-Now visit localhost and see if it works
+
+Now, open your favorite web browser, type your docker-machine IP and see if it works.
 
 ## Without Docker
 
@@ -77,4 +78,4 @@ bundle
 ruby server.rb
 ```
 
-Now visit localhost and see if it works
+Now, open your favorite web browser, type your docker-machine IP and see if it works.
