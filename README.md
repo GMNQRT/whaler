@@ -26,6 +26,8 @@ That's all folks !
 
 Now, open your favorite web browser, type your docker-machine IP and see if it works.
 
+The default credentials are <b>admin@mail.fr</b> with the password <b>adminadmin</b>
+
 ## Without Docker
 
 ### Pre-requisites
