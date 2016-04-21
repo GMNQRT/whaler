@@ -25,6 +25,8 @@ docker-compose up
 That's all folks !
 Now visit localhost:3000 and see if it works
 
+The default credentials are <b>admin@mail.fr</b> with the password <b>adminadmin</b>
+
 ## Without Docker
 
 ### Pre-requisites
