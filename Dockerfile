@@ -1,5 +1,5 @@
 # Base image with ruby 2.2.0
-FROM ruby:2.2.0
+FROM ruby:2.2.0-alpine
 
 
 RUN mkdir -p /whaler-api

@@ -77,6 +77,6 @@ logspout:
   command: syslog://logs:3002
 
 redis:
-  image: redis:latest
+  image: redis:alpine
   ports:
     - "6379:6379"
